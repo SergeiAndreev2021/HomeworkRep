@@ -14,7 +14,7 @@ public class ParallelepipedSquare {
          width = 5;
          height = 4;
          // Площадь параллелепипеда (square) равна : ширина * высота* длинна
-         square = length * width * height;
+         square = 2 * (length * width + length* height + width*height);
          // Выводим square  на конслоь
          System.out.println(square);
     }
