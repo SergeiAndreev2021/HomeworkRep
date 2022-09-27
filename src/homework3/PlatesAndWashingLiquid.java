@@ -9,7 +9,7 @@ public class PlatesAndWashingLiquid {
 
         System.out.println("Введите количество  моющей жидкости, положительное число");
         double liquid = sc.nextDouble();
-        double needLiquid = userPlate*0.5;
+
         while (userPlate>=1 && liquid>=0.5){
             userPlate--;
             liquid = liquid-0.5;
