@@ -8,7 +8,7 @@ public class BinarySearcher {
         Scanner scanner =  new Scanner(System.in);
 
         int starter = 2;
-        int end = 100 ;
+        int end = 101 ;
         while (true){
             int guess = starter + (end - starter)/2;
             System.out.println("Ваше число  равно "+guess+" ?");
