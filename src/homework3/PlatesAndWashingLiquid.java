@@ -4,7 +4,7 @@ public class PlatesAndWashingLiquid {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Введите количество тарелок, положительное целое число");
+         System.out.println("Введите количество тарелок, положительное целое число");
         int userPlate = sc.nextInt();
 
         System.out.println("Введите количество  моющей жидкости, положительное число");

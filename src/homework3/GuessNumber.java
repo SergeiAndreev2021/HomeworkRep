@@ -7,11 +7,14 @@ public class GuessNumber {
         System.out.println("Угадайте число от 1 до 9 включительно");
 
         while (true){
+
             int userNum = sc.nextInt();
+            if (userNum == 0) break;
             if (userNum == number) {
                 System.out.println(" Вы угадали! Победа!!");
                 break;
-            }else if (userNum<number)
+            }
+            if (userNum<number)
                   System.out.println("Загаданное число больше, попробуйте другое");
                   else
                 System.out.println("Загаданное число меньше, попробуйте другое");

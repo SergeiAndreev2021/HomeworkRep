@@ -10,21 +10,21 @@ public class BinarySearcher {
         int starter = 2;
         int end = 101 ;
         while (true){
-            int guess = starter + (end - starter)/2;
-            System.out.println("Ваше число  равно "+guess+" ?");
+            int middle = (end + starter)/2;
+            System.out.println("Ваше число  равно "+middle+" ?");
              int answer = scanner.nextInt();
              if (answer == 1){
                  System.out.println("Угадал!! Игра окончена!!");
                  break;}
-             else {
+
                  System.out.println("Ваше число больше?");
                answer = scanner.nextInt();
                if (answer ==1)
-                  starter = guess;
+                  starter = middle;
                 else
-                    end = guess;
+                    end  = middle;
 
-             }
+
 
         }
 
