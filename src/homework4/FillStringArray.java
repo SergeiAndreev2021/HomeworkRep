@@ -1,8 +1,7 @@
 package homework4;
 
 import java.util.Arrays;
-
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class FillStringArray {
     public static void main(String[] args) {
@@ -12,7 +11,7 @@ public class FillStringArray {
         String[] vocabular = new String[n];
         System.out.println("Заполните массив словами, слова не должны повторяться.");
         System.out.println("Если желаете выйти - введите \"exit\".");
-
+        System.out.println("В вашем массиве "+n+" слов");
         Scanner sc = new Scanner(System.in);
         int index=0; // <-  переменная для подсчета закрепленных в массиве слов
         while (true){
@@ -29,6 +28,7 @@ public class FillStringArray {
             for (int i = 0; i <index+1 ; i++) {
                 if (input.equals(vocabular[i])) {
                           count++;
+                          break;
                 }
             }
 
