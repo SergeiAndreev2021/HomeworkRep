@@ -17,26 +17,18 @@ public class ArrMaxMinMiddle {
         for ( int a : array) System.out.print(a+" ");
         System.out.println();
 
-
-        // найдём минимум и выведем его на экран
-        int min = array[0];
-        for (int i = 1; i <array.length ; i++) {
-            if (array[i]<min) min = array[i];
-        }
-        System.out.println("Минимальное число в массиве : "+min);
-
-        // найдём максимум и выведем его на экран
-        int max = array[0];
-        for (int i = 1; i <array.length ; i++) {
-            if (array[i]>max) max = array[i];
-        }
-        System.out.println("Максимальное число в массиве : "+max);
-
+        // найдём минимум и  максимум и  выведем его на экран
         // найдем среднее арифметическое целое  и выведем на экран (может быть отрицательеым)
+        int min = array[0];
+        int max = array[0];
         int sum =0;
         for (int i = 1; i <array.length ; i++) {
+            if (array[i]<min) min = array[i];
+            if (array[i]>max) max = array[i];
             sum+=array[i];
         }
+        System.out.println("Минимальное число в массиве : "+min);
+        System.out.println("Максимальное число в массиве : "+max);
         int middleArith = sum/array.length;
         System.out.println("Среднее арифметическое : "+middleArith);
         }

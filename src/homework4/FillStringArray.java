@@ -24,6 +24,12 @@ public class FillStringArray {
                 break;
             }
 
+            if (input.isEmpty()){
+                System.out.println("Вы ввели пустое слово, введите полноценное слово ");
+                continue;
+            }
+
+
             int count =0; //переменная для подсчета совпадений
             for (int i = 0; i <index+1 ; i++) {
                 if (input.equals(vocabular[i])) {
@@ -34,9 +40,7 @@ public class FillStringArray {
 
                     if (count >0)
                     {System.out.println("Данное слово уже есть в массиве, введите другое слово");}
-                    else if (input.isEmpty()){
-                        System.out.println("Вы ввели пустое слово, введите полноценное слово ");
-                    }
+                  
                     else{
                         vocabular[index] = input;
                         index++;
