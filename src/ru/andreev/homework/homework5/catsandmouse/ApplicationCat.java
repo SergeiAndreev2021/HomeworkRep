@@ -9,10 +9,10 @@ public class ApplicationCat {
 
         cat1.catVersusCat(cat2);
 
-        System.out.println(cat1.mouseCaptchured);
-        System.out.println(cat2.mouseCaptchured);
+        System.out.println(cat1.getMouseCaptchured());
+        System.out.println(cat2.getMouseCaptchured());
 
         cat2.catchMouse(mouse1);
-        System.out.println(cat2.mouseCaptchured);
+        System.out.println(cat2.getMouseCaptchured());
     }
 }

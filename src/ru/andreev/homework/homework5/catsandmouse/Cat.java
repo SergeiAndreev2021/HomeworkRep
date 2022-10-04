@@ -2,9 +2,22 @@ package ru.andreev.homework.homework5.catsandmouse;
 
 public class Cat {
     private String name;
-    int speed;
-    int weight;
-    int mouseCaptchured;
+   private int speed;
+   private  int weight;
+   private int mouseCaptchured;
+
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getMouseCaptchured() {
+        return mouseCaptchured;
+    }
 
     public Cat(String name, int speed, int weight, int mouseCaptchured) {
         if (mouseCaptchured>100) this.mouseCaptchured =100;
@@ -15,7 +28,7 @@ public class Cat {
         this.mouseCaptchured = mouseCaptchured;
     }
     public void catchMouse(Mouse mouse){
-        if (this.speed>mouse.speed)
+        if (this.speed>mouse.getSpeed())
             this.mouseCaptchured++;
 
     }
