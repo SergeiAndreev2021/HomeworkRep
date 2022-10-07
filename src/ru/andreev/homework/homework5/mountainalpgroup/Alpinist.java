@@ -12,15 +12,7 @@ public class Alpinist {
         this.address = address;
     }
 
-    public  void setName(String name){
-        if (name.length() < 3)
-            this.name = name;
-    }
 
-    public  void setAddress(String address){
-        if (name.length() < 5)
-            this.address = address;
-    }
 
     public String getName() {
         return name;

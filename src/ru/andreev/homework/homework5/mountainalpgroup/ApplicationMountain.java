@@ -12,9 +12,10 @@ public class ApplicationMountain {
        group1.addAlpinist(new Alpinist("Petr","Peterburg"));
         group1.addAlpinist(new Alpinist("Petor","Peterburgos"));
         System.out.println("Group squad is : ");
-        group1.setMountain(mountain1);
 
         System.out.println(Arrays.toString(group1.getAlpList()));
+        group1.setMountain(mountain1);
+
         System.out.println(group1.getMountain());
 
         ClimbingGroup group2 = new ClimbingGroup();
@@ -26,8 +27,5 @@ public class ApplicationMountain {
         group3.addAlpinist(new Alpinist("Sabina","Tambov"));
         group3.addAlpinist(new Alpinist("Mira","Samara"));
         group3.setMountain(mountain3);
-
-        //  к сожалению как связать булевое свойство с аппликейшен я не понимаю.
-        // не понимаю где внедрить эту проверку.
     }
 }

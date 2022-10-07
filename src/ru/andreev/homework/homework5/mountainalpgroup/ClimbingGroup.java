@@ -4,24 +4,23 @@ public class ClimbingGroup {
     private boolean complectationIsOn = true;
     private final Alpinist[] alpList = new Alpinist[3];
     private Mountain mountain;
+    private int membersCount=0;
 
 
     public void addAlpinist(Alpinist alpinist){
-
-            for (int i = 0; i <alpList.length ; i++) {
-                if (alpList[i]==null){
-                    this.alpList[i] = alpinist;
-                    return;
-                }
-            }
-        System.out.println("Alpinist "+alpinist.getName()+" from "+alpinist.getAddress()+" is overall for group");
-
+           if (membersCount ==3) {
+               System.out.println("Alpinist "+alpinist.getName()+" from "+alpinist.getAddress()+" is overall for group");
+               complectationIsOn = false;
+               return;
+           }
+           alpList[membersCount] = alpinist;
+           membersCount++;
     }
         public void setMountain(Mountain mountain){
         this.mountain = mountain;
         }
 
-    public Mountain getMountain (){
+       public Mountain getMountain (){
        return mountain;
     }
 
