@@ -35,6 +35,11 @@ public class Cat {
 
     }
 
+    public void catchBunch(Mouse[] mice){
+        for (int i = 0; i <mice.length ; i++) {
+            this.catchMouse(mice[i]);
+        }
+    }
     public void catchMouse(Mouse mouse) {
         if (mouseCaptchured == 100) {
             System.out.println("Больше негде складывать мышей");
@@ -70,8 +75,63 @@ public class Cat {
             System.out.println("Коты в одной весовой категории, они согласны на ничью.");
             return;
         }
-        //  очищаем массивы от  null
 
+        if (this.weight > cat1.weight) {
+
+            for (int i = 0, j=0; i < this.packOfMouses.length; i++) {
+                    if (this.packOfMouses[i] != null) continue;
+                        this.packOfMouses[i] = cat1.packOfMouses[j];
+                        j++;
+                if (cat1.packOfMouses[j]==null) break;
+            }
+            for (int k = 0; k < this.packOfMouses.length; k++ ){
+                if (packOfMouses[k]!=null){
+                    if (packOfMouses[k].getSpeed()>this.speed){
+                        System.out.println("Мышка "+packOfMouses[k].getName()+" убежала");
+                        packOfMouses[k]=null;
+                    }
+                }
+            }
+            cat1.packOfMouses = new Mouse[100];
+            System.out.println(this.name + "  победил и отобрал у "+cat1.name+" мышей");
+
+            for (Mouse m : this.packOfMouses) {
+                if (m!=null)
+                System.out.println(m);
+            }
+            System.out.println(cat1.name + "  остался без мышей");
+        } else {
+
+            for (int i = 0, j=0; i < cat1.packOfMouses.length; i++ ) {
+                if (cat1.packOfMouses[i] != null) continue;
+                cat1.packOfMouses[i] = this.packOfMouses[j];
+                    j++;
+                    if (this.packOfMouses[j]==null) break;
+            }
+            for (int k = 0; k < cat1.packOfMouses.length; k++ ){
+                if (packOfMouses[k]!=null){
+                    if (packOfMouses[k].getSpeed()>cat1.speed){
+                        System.out.println("Мышка "+packOfMouses[k].getName()+" убежала");
+                        packOfMouses[k]=null;
+                    }
+                }
+            }
+            this.packOfMouses = new Mouse[100];
+            System.out.println(cat1.name + "  победил и отобрал у "+this.name+" мышей");
+            for (Mouse m : cat1.packOfMouses) {
+                if (m!=null)
+                System.out.println(m);
+            }
+            System.out.println(this.name + "  остался без мышей");
+        }
+
+
+
+
+
+
+
+       /*
         int count = 0;
         for (Mouse packOfMouse : this.packOfMouses) {
             if (packOfMouse != null)
@@ -118,5 +178,6 @@ public class Cat {
             System.out.println(this.name + "  остался без мышей");
 
         }
+        */
     }
 }
