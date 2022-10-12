@@ -22,10 +22,18 @@ public class ApplicationMountain {
         group2.addAlpinist(new Alpinist("Sasha","Erevan"));
         group2.addAlpinist(new Alpinist("Misha","Saratov"));
         group2.setMountain(mountain2);
+        System.out.println("Group squad is : ");
+
+        System.out.println(Arrays.toString(group2.getAlpList()));
+        System.out.println(group2.getMountain());
 
         ClimbingGroup group3 = new ClimbingGroup();
         group3.addAlpinist(new Alpinist("Sabina","Tambov"));
         group3.addAlpinist(new Alpinist("Mira","Samara"));
         group3.setMountain(mountain3);
+        System.out.println("Group squad is : ");
+
+        System.out.println(Arrays.toString(group3.getAlpList()));
+        System.out.println(group2.getMountain());
     }
 }

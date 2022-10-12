@@ -6,7 +6,7 @@ public class Mountain {
     private int altitude;
 
     public Mountain(String name, String country, int altitude) {
-        if (name.length() < 4 || country.length() < 4 || altitude < 100)
+        if (country==null || name == null || name.length() < 4 || country.length() < 4 || altitude < 100 )
             throw new IllegalArgumentException("Неверно введены данные");
 
         this.name = name;

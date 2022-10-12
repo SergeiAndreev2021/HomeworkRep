@@ -9,7 +9,7 @@ public class Product {
 
     //  в конструктор закладываем проверку на то что введенные данные положительны
     public Product(String name, int belok, int fat, int uglevod,int calories) {
-        if ( name.length()<3 || belok<0 || fat<0 || uglevod <0 || calories<0)
+        if ( name == null || name.length()<3 || belok<0 || fat<0 || uglevod <0 || calories<0)
             throw  new IllegalArgumentException("U have entered wrong data");
         this.name = name;
         this.belok = belok;
@@ -19,7 +19,7 @@ public class Product {
     }
 
     public Product(String name, int belok, int fat) {
-        if ( name.length()<3 || belok<0 || fat<0)
+        if ( name == null || name.length()<3 || belok<0 || fat<0)
             throw  new IllegalArgumentException("U have entered wrong data");
         this.name = name;
         this.belok = belok;
@@ -27,7 +27,7 @@ public class Product {
     }
 
     public Product(String name, int belok) {
-        if ( name.length()<3 || belok<0)
+        if (name == null || name.length()<3 || belok<0)
             throw new IllegalArgumentException("U have entered wrong data");
 
         this.name = name;
@@ -36,7 +36,7 @@ public class Product {
 
 
     public Product(String name) {
-        if ( name.length()<3)
+        if (name == null || name.length()<3)
             throw new IllegalArgumentException("U have entered wrong data");
         this.name = name;
     }

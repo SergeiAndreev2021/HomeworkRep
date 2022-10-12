@@ -6,7 +6,7 @@ public class Alpinist {
 
 
     Alpinist(String name, String address){
-        if (name.length() < 3 || address.length() < 5)
+        if ( name == null || address == null ||name.length() < 3 || address.length() < 5)
             throw new IllegalArgumentException("Ошибка данных");
         this.name = name;
         this.address = address;
