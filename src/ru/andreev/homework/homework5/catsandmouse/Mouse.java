@@ -4,7 +4,7 @@ public class Mouse {
    private int speed;
    private String name;
    private String[] names = {"Buba","Biba","Giga","Gaga","Zoro","Pomo","Dudu","Didi","Lola","Lula"};
-
+    Mouse(){}
     Mouse(String name, int speed)
     {
         this.name  = Objects.requireNonNull(name, "wrong name");
