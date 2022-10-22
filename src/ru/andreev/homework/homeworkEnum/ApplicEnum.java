@@ -8,6 +8,6 @@ public class ApplicEnum {
             System.out.println(p);
         }
        long long1 = 1_000_000_000_000_000L;
-     
+
     }
 }
