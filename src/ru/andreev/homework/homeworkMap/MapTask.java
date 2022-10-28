@@ -55,18 +55,18 @@ public class MapTask {
         //  с помощью отсортированного множества получаем уникальные ключи (длины слов) для итоговой мапы
         //  и распологаем их в порядке возрастания
         Set<Integer> set = new TreeSet<>();
-        for (int i = 0; i < words.length; i++) {
-            set.add(words[i].length());
+        for (String word : words) {
+            set.add(word.length());
         }
         // Создаем ArrayList на основе полученного выше множества  для того чобы можно было работать с элементами и
-        // формируем  мапу с ключами-элементами ArrayList и пустыми значениями
+        // формируем  мапу с ключами-элементами ArrayList и пустыми значениями типа ArrayList <String>
         ArrayList<Integer> arr = new ArrayList<>(set);
-        for (int i = 0; i < arr.size(); i++) {
-            map.put(arr.get(i), new ArrayList<String>());
+        for (Integer integer : arr) {
+            map.put(integer, new ArrayList<String>());
         }
-        // заполняем значения. Количество букв в значении соответствует ключам мапы
-        for (int i = 0; i < words.length; i++) {
-            map.get(words[i].length()).add(words[i]);
+        // заполняем значения листов. Количество букв в значении соответствует ключам мапы
+        for (String word : words) {
+            map.get(word.length()).add(word);
         }
         return map;
     }
@@ -74,17 +74,18 @@ public class MapTask {
     public static void encounterchart(String text) {
         text = text.toLowerCase();
         String[] words = text.split(" ");
-        // Создаем изначальную мапу значений
+        // Создаем изначальную мапу слово - ключ, число - количество упоминаний
         Map<String, Integer> map = new HashMap<>();
         for (String s : words) {
             if (map.containsKey(s)) {
                 map.put(s, map.get(s) + 1);
             } else map.put(s, 1);
         }
-        // Создаем  Лист типа узел Ключ + значение,  ( сам не догадался гуголь помог) на основе нашей мапы
-        // И сортируем его по убыванию с помощью кампаратора
+        // Создаем  Лист типа узел Ключ + значение,   на основе нашей мапы
+        // И сортируем его по убыванию с помощью компаратора
         List<Map.Entry<String, Integer>> list33 = new ArrayList<>(map.entrySet());
-        Collections.sort(list33, new Comparator<Map.Entry<String, Integer>>() {
+
+        list33.sort(new Comparator<Map.Entry<String, Integer>>() {
             @Override
             public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
                 return o2.getValue().compareTo(o1.getValue());
