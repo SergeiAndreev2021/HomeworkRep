@@ -54,7 +54,9 @@ public class Employee {
         ArrayList<Employee> employees = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i <num ; i++) {
-            employees.add(new Employee(names[random.nextInt(names.length)],companies[random.nextInt(companies.length)], random.nextInt(8000)+2000,random.nextInt(40)+21));
+            employees.add(new Employee(names[random.nextInt(names.length)],
+                    companies[random.nextInt(companies.length)],
+                    random.nextInt(8000)+2000,random.nextInt(40)+21));
         }
         return employees;
     }
