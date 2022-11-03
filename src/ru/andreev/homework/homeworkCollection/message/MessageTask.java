@@ -27,18 +27,9 @@ public class MessageTask {
     }
 
     public static void countEachCode(List<Message> list) {
-         int [] codeCount = {0,0,0,0,0,0,0,0,0,0};
+         int [] codeCount = new int[10];
         for (Message m : list) {
-            if (m.getCode() == 0) codeCount[0]++;
-            if (m.getCode() == 1) codeCount[1]++;
-            if (m.getCode() == 2) codeCount[2]++;
-            if (m.getCode() == 3) codeCount[3]++;
-            if (m.getCode() == 4) codeCount[4]++;
-            if (m.getCode() == 5) codeCount[5]++;
-            if (m.getCode() == 6) codeCount[6]++;
-            if (m.getCode() == 7) codeCount[7]++;
-            if (m.getCode() == 8) codeCount[8]++;
-            if (m.getCode() == 9) codeCount[9]++;
+           codeCount[m.getCode()]++;
         }
         for (int i = 0; i <codeCount.length ; i++) {
             if (codeCount[i]>0)
@@ -50,20 +41,20 @@ public class MessageTask {
 
 
     public static void uniqueMessage(List<Message> list){
+        /*
         HashSet<Message> set = new HashSet<>();
         //  set = Collection.adAll(list); ??
         for (Message m : list) {
             set.add(m);
         }
         System.out.println(" Количество уникальных сообщений в списке " + set.size());
+
+         */
+        System.out.println(new HashSet<>(list).size());
     }
 
     public static void uniqueMessageInOriginalOrder(List<Message> list){
-        LinkedHashSet<Message> set = new LinkedHashSet<>();
-        //  set = Collection.adAll(list); ??
-        for (Message m : list) {
-            set.add(m);
-        }
+        LinkedHashSet<Message> set = new LinkedHashSet<>(list);
         System.out.println(set.toString());
     }
     public static void removeEach(List<Message> messageList, MessagePriority priority) {

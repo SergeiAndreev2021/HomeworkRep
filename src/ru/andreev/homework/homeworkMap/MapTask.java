@@ -46,6 +46,7 @@ public class MapTask {
         }
         map.put(word, count);
         return map;
+        //  можно тут и без мапы просто вывести ворд и каунт
     }
 
     //5.
