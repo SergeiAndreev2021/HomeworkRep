@@ -7,8 +7,7 @@ public class StringRecieverThread extends Thread {
 
     @Override
     public void run() {
-        //CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>();
-       // CommonCollection collection = new CommonCollection();
+
         Scanner scanner = new Scanner(System.in);
         while(true){
             System.out.println(" Enter your word");
