@@ -9,7 +9,7 @@ public class Application {
       finder.start();
         // ждем пока закончатся манипуляции с коллекцией
         try {
-            reciever.join();
+            reciever.join(30000);
             finder.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
