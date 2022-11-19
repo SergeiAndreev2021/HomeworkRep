@@ -1,9 +1,12 @@
 package ru.andreev.homework.multithreading.shortestword;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class Application {
     public static void main(String[] args) {
-      StringRecieverThread reciever = new StringRecieverThread();
-      ShortStringFinder finder = new ShortStringFinder();
+        CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>();
+        StringRecieverThread reciever = new StringRecieverThread(strings);
+        ShortStringFinder finder = new ShortStringFinder(strings);
 
       reciever.start();
       finder.start();
@@ -16,6 +19,7 @@ public class Application {
         }
 
         // Выводим коллекцию без первой строчки
-        System.out.println(CommonCollection.strings);
+        if (!strings.isEmpty())
+            System.out.println(strings);
     }
 }

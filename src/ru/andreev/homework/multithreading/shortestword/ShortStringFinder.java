@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ShortStringFinder extends Thread{
+
+    CopyOnWriteArrayList<String> strings;
+
+    public ShortStringFinder (CopyOnWriteArrayList<String> strings) {
+        this.strings = strings;
+    }
     @Override
     public void run() {
         try {
@@ -13,8 +19,11 @@ public class ShortStringFinder extends Thread{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-     
-        String shortest = CommonCollection.strings.stream().min((x,y)-> x.length()-y.length()).orElse("Error");
+         if (strings.isEmpty()) {
+             System.out.println(" no elements in collection");
+             return;
+         }
+        String shortest = strings.stream().min((x,y)-> x.length()-y.length()).orElse("Error");
 
         File file = new File("shortString.txt");
         try(FileOutputStream fos = new FileOutputStream(file))
@@ -24,6 +33,6 @@ public class ShortStringFinder extends Thread{
             e.printStackTrace();
         }
 
-        CommonCollection.strings.remove(0);
+       strings.remove(shortest);
     }
 }

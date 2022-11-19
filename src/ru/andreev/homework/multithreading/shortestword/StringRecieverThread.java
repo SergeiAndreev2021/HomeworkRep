@@ -4,6 +4,11 @@ import java.util.Scanner;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class StringRecieverThread extends Thread {
+     CopyOnWriteArrayList<String> strings;
+
+    public StringRecieverThread (CopyOnWriteArrayList<String> strings) {
+        this.strings = strings;
+    }
 
     @Override
     public void run() {
@@ -14,7 +19,7 @@ public class StringRecieverThread extends Thread {
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("stop"))
                 break;
-            CommonCollection.strings.add(input);
+           strings.add(input);
         }
     }
 }
