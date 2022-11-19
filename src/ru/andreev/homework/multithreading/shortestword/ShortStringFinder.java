@@ -13,7 +13,7 @@ public class ShortStringFinder extends Thread{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //CopyOnWriteArrayList<String> strings = new CopyOnWriteArrayList<>();
+        
         String shortest = CommonCollection.strings.stream().min((x,y)-> x.length()-y.length()).orElse("Error");
 
         File file = new File("shortString.txt");
